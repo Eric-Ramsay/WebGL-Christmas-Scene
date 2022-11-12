@@ -786,8 +786,7 @@ window.onload = function init() {
     //  Load shaders and initialize attribute buffers
     program = initShaders( gl, "vertex-shader", "fragment-shader" );
     gl.useProgram( program );
-
-	openNewTexture('assets/textures/sky.jpg');
+	
 	openNewTexture('assets/textures/floor.jpg');
 	openNewTexture('assets/textures/needles.jpg');
 	openNewTexture('assets/textures/gold.jpg');
@@ -917,9 +916,9 @@ function checkKeyUp(e) {
 	}
 }
 
-function openNewTexture(picName)
-{
-    var i = textures.length;
+//Create a texture given a file path
+function openNewTexture(picName) {
+    let i = textures.length;
     textures[i] = gl.createTexture();
     textures[i].image = new Image();
     textures[i].image.src = picName;
